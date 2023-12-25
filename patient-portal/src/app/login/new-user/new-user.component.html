@@ -1,0 +1,18 @@
+<div class="registration-container">
+  <div class="card">
+    <div class="form">
+      <h1>Register for New User</h1>
+      <form  [formGroup]="registrationForm">
+       <label for="username">UserName:</label>
+       <input  id="username" type="text" formControlName="username" value="userName">
+       <label for="email-id">Email ID:</label>
+       <input type="text" id="email-id" formControlName="email" value="email">
+       <label for="password"> Set Password:</label>
+       <input type="password" id="setpassword" formControlName="setpassword" value="setpassword" >
+       <label for="confirmpassword">Confirm Password</label>
+       <input type="password" id="confirmpassword" formControlName="confirmpassword" value="confirmpassword">
+       <button type="submit" (click)="registerUser()">Register</button>
+      </form>
+    </div>
+  </div>
+</div>

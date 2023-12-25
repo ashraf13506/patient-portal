@@ -1,8 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login.component';
+import { NewUserComponent } from './new-user/new-user.component';
 
-const routes: Routes = [{ path: '', component: LoginComponent }];
+const routes: Routes = [{
+  path:'login',component:LoginComponent,
+},
+{path:'new-user',component:NewUserComponent},
+{ path: '', redirectTo:'login' }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

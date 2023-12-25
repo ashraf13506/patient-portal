@@ -2,13 +2,17 @@
   <div class="login-card">
     <div class="login-inputs">
       <h1>Login</h1>
-      <form>
+      <form [formGroup]="loginForm">
         <label for="user-name/email">User Name/Email:</label>
         <input type="text" value="user-name" formControlName="username">
         <label for="password">Password :</label>
         <input type="password" value="password" formControlName="password">
-        <button (click)="login()">Login</button>
+        <button [disabled]="loginForm.invalid" (click)="login()">Login</button>
         </form>
     </div>
   </div>
+<div class="new-user-form">
+  </div>
+  <span>If you are not an registered User Please <a href="/new-user">Click here</a></span>
+
   </div>
