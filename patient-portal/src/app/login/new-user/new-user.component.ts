@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-new-user',
@@ -8,7 +10,7 @@ import { FormBuilder, FormControl, Validators } from '@angular/forms';
 })
 export class NewUserComponent implements OnInit {
 
-  constructor(private fb:FormBuilder) {
+  constructor(private fb:FormBuilder,private http:LoginService,private router:Router) {
 
   }
 registrationForm=this.fb.group({
@@ -22,8 +24,18 @@ registrationForm=this.fb.group({
   }
   registerUser()
   {
-    console.log(this.registrationForm.value)
+    const registrationObject={
+      username:this.registrationForm.value.username,
+      email:this.registrationForm.value.email,
+      password:this.registrationForm.value.confirmpassword
+    }
 
+    this.http.registerNewUser(registrationObject).subscribe((res)=>{
+        if(res)
+        {
+          this.router.navigate(['login'])
+        }
+    })
 
   }
 
