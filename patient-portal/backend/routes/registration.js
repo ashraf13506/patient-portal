@@ -5,11 +5,11 @@ const router = express.Router();
 
 router.post('/',async(req,res)=>{
 
-  const body=req.body;
-  const result=await patient.create({
-    username:body.username,
-    email:body.email,
-    setpassword:body.setpassword
+
+  const result=await patientsModel.create({
+    username:req.body.username,
+    email:req.body.email,
+    setpassword:req.body.setpassword
   })
 
   return res.status(201).json({msg:'success'})
@@ -34,6 +34,6 @@ const patientSchema=new mongoose.Schema({
 
 })
 
-const patient=mongoose.model('patient',patientSchema)
+const patientsModel=mongoose.model('patient',patientSchema)
 
 module.exports = router;
