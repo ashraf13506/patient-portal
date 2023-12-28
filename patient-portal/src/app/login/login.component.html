@@ -7,12 +7,13 @@
         <input type="text" value="user-name" formControlName="username">
         <label for="password">Password :</label>
         <input type="password" value="password" formControlName="password">
-        <button [disabled]="loginForm.invalid" (click)="login()">Login</button>
+        <button type="submit" [disabled]="loginForm.invalid" (click)="login()">Login</button>
+        <span>If you are not an registered User Please <a href="/new-user">Click here</a></span>
         </form>
     </div>
   </div>
 <div class="new-user-form">
   </div>
-  <span>If you are not an registered User Please <a href="/new-user">Click here</a></span>
+
 
   </div>
