@@ -12,3 +12,8 @@ button[type=submit]
   font-family: 'Courier New', Courier, monospace;
   border-radius: 5em;
 }
+ button:disabled {
+  color:black;
+  background-color: #8a8787;
+
+}

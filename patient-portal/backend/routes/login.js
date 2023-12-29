@@ -1,6 +1,8 @@
 const express=require('express');
 const router=express.Router();
-const mongoose = require('mongoose');
+const loginModel=require('../../backend/schemas/login-schema')
+
+
 router.post('/',async(req,res)=>{
 
   const result=await loginModel.create({
@@ -14,12 +16,7 @@ router.post('/',async(req,res)=>{
 
 })
 
-const Loginschema=new mongoose.Schema({
-  username:String,
-  password:String
-})
 
-const loginModel= mongoose.model('login',Loginschema);
 
 module.exports=router;
 

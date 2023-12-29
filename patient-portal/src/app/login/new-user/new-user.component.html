@@ -11,7 +11,7 @@
        <input type="password" id="setpassword" formControlName="setpassword" value="setpassword" >
        <label for="confirmpassword">Confirm Password</label>
        <input type="password" id="confirmpassword" formControlName="confirmpassword" value="confirmpassword">
-       <button type="submit" (click)="registerUser()">Register</button>
+       <button type="submit" [disabled]="registrationForm.invalid" (click)="registerUser()">Register</button>
       </form>
     </div>
   </div>

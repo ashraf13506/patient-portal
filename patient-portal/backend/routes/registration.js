@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const express = require('express');
 const router = express.Router();
+const patientsModel=require('./../../backend/schemas/registration-schema')
 
 
 router.post('/',async(req,res)=>{
@@ -16,28 +17,6 @@ router.post('/',async(req,res)=>{
 
 })
 
-const patientSchema=new mongoose.Schema({
-  username:{
-    type:String,
-    required:true
 
-  },
-  email:{
-    type:String,
-    required:true,
-    unique:true
-
-
-  },
-  setpassword:{
-    type:String,
-    required:true
-
-  }
-
-
-})
-
-const patientsModel=mongoose.model('patient',patientSchema)
 
 module.exports = router;
